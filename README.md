@@ -1,6 +1,8 @@
 # Anna's Daye tech challenge
 _It's tampon time_
 
+https://priceless-bell-cceae5.netlify.com/
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/01f88984-c4c3-41b4-b3bb-665cce0a5d3d/deploy-status)](https://app.netlify.com/sites/priceless-bell-cceae5/deploys)
 
 ---
