@@ -16,7 +16,7 @@ export const colours = {
     baseColour: '#FEFEE5',
     darkGreen: '#004234',
     lightGreen: '#BDECBD',
-    darkYellow: 'F2A900',
+    darkYellow: '#F2A900',
     accentColour: '#FFA7A3'
 };
 

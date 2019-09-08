@@ -5,6 +5,9 @@ import styled from 'styled-components';
 import { colours, fontFamily, fontSize } from './theme';
 import slider from './slider.svg';
 
+import Header from './components/header';
+
+
 const AppContainer = styled.div`
   position: relative;
   min-height: 100vh;
@@ -18,7 +21,7 @@ const AppContainer = styled.div`
 function App() {
   return (
     <AppContainer>
-      <header>
+      <Header />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Daye
@@ -33,7 +36,6 @@ function App() {
           Learn React
         </a>
         <img src={slider} />
-      </header>
       </AppContainer>
   );
 }
