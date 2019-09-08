@@ -1,11 +1,24 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import styled from 'styled-components';
+import { colours, fontFamily, fontSize } from './theme';
+import slider from './slider.svg';
+
+const AppContainer = styled.div`
+  position: relative;
+  min-height: 100vh;
+  background-color: ${colours.baseColour};
+  color: ${colours.darkGreen};
+`
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <AppContainer>
+      <header>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Daye
@@ -19,8 +32,9 @@ function App() {
         >
           Learn React
         </a>
+        <img src={slider} />
       </header>
-    </div>
+      </AppContainer>
   );
 }
 
