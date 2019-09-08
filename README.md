@@ -5,6 +5,9 @@ https://priceless-bell-cceae5.netlify.com/
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/01f88984-c4c3-41b4-b3bb-665cce0a5d3d/deploy-status)](https://app.netlify.com/sites/priceless-bell-cceae5/deploys)
 
+the figma: https://www.figma.com/file/I2MuDdY1jUR9k2O4YS403l/Daye-tech-test?node-id=0%3A1
+the planning: https://hackmd.io/_bKYJJd8R66KPR3JHX2yuA?both
+
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
