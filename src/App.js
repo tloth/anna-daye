@@ -7,6 +7,7 @@ import slider from './slider.svg';
 
 import Header from './components/header';
 import Button from './components/button';
+import Slider from './components/slider';
 
 
 const AppContainer = styled.div`
@@ -25,6 +26,7 @@ function App() {
       <Header />
       <Button label="Small" />
       <Button label="Regular" />
+      <Slider />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Daye
