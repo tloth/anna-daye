@@ -17,7 +17,6 @@ const TableHeading = styled.th`
     border: ${borders.darkGreen};
     padding: ${spacing.tiny};
     width: 10vw;
-    box-sizing: border-box;
 `
 const TableCell = styled.td`
     text-align: center;
