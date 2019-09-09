@@ -5,11 +5,10 @@ import { colours, fontSize, spacing, borders } from '../theme';
 const TableOutline = styled.table`
     background-color: ${colours.baseColour};
     color: ${colours.darkGreen};
-    max-width: 60vw; //THIS FUCKS IT UP THOUGH
     font-size: ${fontSize.small};
     border: ${borders.darkGreen};
     border-collapse: collapse;
-    margin: ${spacing.medium}
+    margin: ${spacing.medium};
 `
 const TableRow = styled.tr`
 `
@@ -17,11 +16,13 @@ const TableHeading = styled.th`
     text-transform: uppercase;
     border: ${borders.darkGreen};
     padding: ${spacing.tiny};
+    width: 10vw;
 `
 const TableCell = styled.td`
     text-align: center;
     border: ${borders.darkGreen};
     padding: ${spacing.tiny};
+    width: 10vw;
 `
 
 const Table = () => {
@@ -33,17 +34,17 @@ const Table = () => {
                 <TableHeading>Regular</TableHeading>
             </TableRow>
             <TableRow>
-                <TableCell>6/6</TableCell>
+                <TableHeading>6/6</TableHeading>
                 <TableCell>£18</TableCell>
                 <TableCell>£19</TableCell>
             </TableRow>
             <TableRow>
-                <TableCell>8/4</TableCell>
+                <TableHeading>8/4</TableHeading>
                 <TableCell>£17</TableCell>
                 <TableCell>£19</TableCell>
             </TableRow>
             <TableRow>
-                <TableCell>10/2</TableCell>
+                <TableHeading>10/2</TableHeading>
                 <TableCell>£17</TableCell>
                 <TableCell>£18</TableCell>
             </TableRow>
