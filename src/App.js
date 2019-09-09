@@ -3,11 +3,11 @@ import logo from './logo.svg';
 import './App.css';
 import styled from 'styled-components';
 import { colours, fontFamily, fontSize } from './theme';
-import slider from './slider.svg';
 
 import Header from './components/header';
 import Button from './components/button';
 import Slider from './components/slider';
+import Table from './components/table';
 
 
 const AppContainer = styled.div`
@@ -27,6 +27,7 @@ function App() {
       <Button label="Small" />
       <Button label="Regular" />
       <Slider />
+      <Table />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Daye
@@ -40,7 +41,6 @@ function App() {
         >
           Learn React
         </a>
-        <img src={slider} />
       </AppContainer>
   );
 }
