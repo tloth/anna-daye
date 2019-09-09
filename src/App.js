@@ -24,10 +24,11 @@ function App() {
   return (
     <AppContainer>
       <Header />
-      <Button label="Small" />
-      <Button label="Regular" />
+      <Button label="small" />
+      <Button label="regular" />
       <Slider />
       <Table />
+
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Daye
