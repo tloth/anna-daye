@@ -6,6 +6,7 @@ import { colours, fontFamily, fontSize } from './theme';
 import slider from './slider.svg';
 
 import Header from './components/header';
+import Button from './components/button';
 
 
 const AppContainer = styled.div`
@@ -22,6 +23,8 @@ function App() {
   return (
     <AppContainer>
       <Header />
+      <Button label="Small" />
+      <Button label="Regular" />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Daye
