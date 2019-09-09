@@ -21,9 +21,9 @@ export const colours = {
 };
 
 export const borders = {
-    darkGreen: '1px solid ${colours.darkGreen}',
-    darkYellow: '1px solid ${colours.darkYellow}',
-    dashed: '1px dashed ${colours.darkGreen}'
+    darkGreen: `1px solid ${colours.darkGreen}`,
+    darkYellow: `1px solid ${colours.darkYellow}`,
+    dashed: `1px dashed ${colours.darkGreen}`
 };
 
 export const spacing = {
