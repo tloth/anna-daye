@@ -5,8 +5,10 @@ import { colours, fontFamily, fontSize, spacing } from '../theme';
 import Button from './button';
 
 const SliderDisplay = styled.section`
-    
 `
+const ButtonDisplay = styled.section`
+`
+
 
 const Slider = () => {
     const [plainTamponCount, setPlainTamponCount] = React.useState(6);
@@ -61,14 +63,18 @@ const Slider = () => {
 
 
 return (
-    <SliderDisplay>
+    <>
+    <ButtonDisplay>
         <Button label="small" onClick={e => {setSelectedSize(e.target.value)}} />
         <Button label="regular" onClick={e => {setSelectedSize(e.target.value)}} />
+    </ButtonDisplay>
+    <SliderDisplay>
         <input type="range" min={6} max={10} value={plainTamponCount} step={2} onChange={event => setTamponCounts(event.target.value)} />
         <h1>{plainTamponCount} plain tampons and {cbdTamponCount} CBD-infused tampons</h1>
         <h2>This package costs {price}{currency}</h2>
         <img src={packageImageUrl} />
     </SliderDisplay>
+    </>
 )
 
 }
