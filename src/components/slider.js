@@ -34,7 +34,7 @@ const Slider = () => {
     }
 
     React.useEffect(() => {
-        if (tamponsData && plainTamponCount && cbdTamponCount) {
+        if (tamponsData && selectedSize && plainTamponCount && cbdTamponCount) {
         // get all packages that match selected size
         const rightSizes = tamponsData.filter(x => 
             (x.tampons[0].size === selectedSize) && (x.tampons[0].size === x.tampons[1].size)
