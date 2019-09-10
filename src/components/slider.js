@@ -1,12 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colours, fontFamily, fontSize, spacing } from '../theme';
+import { colours, fontFamily, fontSize, spacing, borders } from '../theme';
 
 import Button from './button';
 
 const SliderDisplay = styled.section`
 `
 const ButtonDisplay = styled.section`
+`
+const SelectedProductDisplay = styled.section`
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-width: 60vw;
+    border: 2px dashed ${colours.darkYellow};
+    padding: ${spacing.small};
+    margin: auto;
+`
+const SelectedProductImage = styled.img`
+    display: flex;
+    align-self: center;
+    max-width: 20em;
 `
 
 
@@ -70,10 +84,12 @@ return (
     </ButtonDisplay>
     <SliderDisplay>
         <input type="range" min={6} max={10} value={plainTamponCount} step={2} onChange={event => setTamponCounts(event.target.value)} />
+    </SliderDisplay>
+    <SelectedProductDisplay>
         <h1>{plainTamponCount} plain tampons and {cbdTamponCount} CBD-infused tampons</h1>
         <h2>This package costs {price}{currency}</h2>
-        <img src={packageImageUrl} />
-    </SliderDisplay>
+        <SelectedProductImage src={packageImageUrl} />
+    </SelectedProductDisplay>
     </>
 )
 
