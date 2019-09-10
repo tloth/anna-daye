@@ -12,7 +12,7 @@ const Slider = () => {
     const [plainTamponCount, setPlainTamponCount] = React.useState(6);
     const [cbdTamponCount, setCbdTamponCount] = React.useState(6);
     const [tamponsData, setTamponsData] = React.useState(null);
-    const [selectedPackage, setSelectedPackage] = React.useState(null);
+    const [selectedSize, setSelectedSize] = React.useState(null);
     const [packageImageUrl, setPackageImageUrl] = React.useState(null);
     const [price, setPrice] = React.useState(null);
     const [currency, setCurrency] = React.useState(null);
@@ -24,6 +24,12 @@ const Slider = () => {
             .catch(err => console.log(err));
     }, [])
     console.log('tamponsData is ', tamponsData);
+
+    const setTamponCounts = (value, size) => {
+        setPlainTamponCount(value);
+        setCbdTamponCount(12-value);
+        // getCorrectSizeTampons(size);
+    }
 
     const getCorrectSizeTampons = e => {
 
@@ -46,16 +52,13 @@ const Slider = () => {
         }
 
 
-    const setTamponCounts = (value) => {
-        setPlainTamponCount(value);
-        setCbdTamponCount(12-value);
-    }
+    
 
 
 return (
     <SliderDisplay>
         <Button label="regular" onClick={e => getCorrectSizeTampons(e)} />
-        <input type="range" min={0} max={12} value={plainTamponCount} step={2} onChange={event => setTamponCounts(event.target.value)} />
+        <input type="range" min={6} max={10} value={plainTamponCount} step={2} onChange={event => setTamponCounts(event.target.value)} />
         <h1>{plainTamponCount} plain tampons and {cbdTamponCount} CBD-infused tampons</h1>
         <h2>This package costs {price}{currency}</h2>
         <img src={packageImageUrl} />
