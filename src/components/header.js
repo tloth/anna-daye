@@ -4,7 +4,8 @@ import {fontFamily, fontSize, colours, spacing} from '../theme';
 
 const HeaderContainer = styled.section`
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     padding: ${spacing.tiny};
     font-size: ${fontSize.medium};
 `
@@ -17,6 +18,7 @@ const PageTitle = styled.p`
     font-family: ${fontFamily.baseFont};
     color: ${colours.darkGreen};
     text-transform: uppercase;
+    font-weight: 800;
 `
 
 const Header = () => {

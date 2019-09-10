@@ -6,6 +6,7 @@ const StyledButton = styled.button`
     background-color: ${colours.baseColour};
     border: ${borders.darkGreen};
     padding: ${spacing.tiny};
+    margin: ${spacing.small};
     font-family: ${fontFamily.baseFont};
     font-size: ${fontSize.small};
     color: ${colours.darkGreen};
