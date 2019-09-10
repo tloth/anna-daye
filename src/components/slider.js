@@ -5,6 +5,27 @@ import { colours, fontFamily, fontSize, spacing, borders } from '../theme';
 import Button from './button';
 
 const SliderDisplay = styled.section`
+    .slider {
+        -webkit-appearance: none;
+        outline: none;
+        background: ${colours.darkGreen};
+        height: 0.15em;
+        width: 20em;
+        margin: ${spacing.medium};
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 2.1em;
+            width: 2.1em;
+            background: url(https://daye.cdn.prismic.io/daye%2F9bc6bc2e-94ff-4b77-b9e6-c87f09aebbe3_sanitised.svg) no-repeat;
+        }
+        &::-moz-range-thumb {
+            height: 2.1em;
+            width: 2.1em;
+            background: url(https://daye.cdn.prismic.io/daye%2F9bc6bc2e-94ff-4b77-b9e6-c87f09aebbe3_sanitised.svg) no-repeat;
+        }
+    }
 `
 const ButtonDisplay = styled.section`
 `
@@ -83,7 +104,7 @@ return (
         <Button label="regular" onClick={e => {setSelectedSize(e.target.value)}} />
     </ButtonDisplay>
     <SliderDisplay>
-        <input type="range" min={6} max={10} value={plainTamponCount} step={2} onChange={event => setTamponCounts(event.target.value)} />
+        <input type="range" min={6} max={10} value={plainTamponCount} step={2} className="slider" onChange={event => setTamponCounts(event.target.value)} />
     </SliderDisplay>
     <SelectedProductDisplay>
         <h1>{plainTamponCount} plain tampons and {cbdTamponCount} CBD-infused tampons</h1>
