@@ -24,8 +24,6 @@ function App() {
   return (
     <AppContainer>
       <Header />
-      <Button label="small" />
-      <Button label="regular" />
       <Slider />
       <Table />
 
