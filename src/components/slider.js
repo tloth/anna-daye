@@ -1,10 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colours, fontFamily, fontSize, spacing, borders } from '../theme';
+import { ReactComponent as Tampons } from '../12tampons.svg';
 
 import Button from './button';
 
 const SliderDisplay = styled.section`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     .slider {
         -webkit-appearance: none;
         outline: none;
@@ -43,7 +48,16 @@ const SelectedProductImage = styled.img`
     align-self: center;
     max-width: 20em;
 `
+const Text = styled.p`
+    color: ${colours.darkGreen};
+    font-size: ${fontSize.medium};
+    font-weight: 600;
+`
 
+// maybe call from a helpers folder
+const getCurrencySymbol = (currency) => {
+        return currency === 'GBP' ? '£' : null;
+    }
 
 const Slider = () => {
     const [plainTamponCount, setPlainTamponCount] = React.useState(6);
@@ -97,6 +111,10 @@ const Slider = () => {
     }, [selectedSize, plainTamponCount, cbdTamponCount])
 
 
+    
+    const currencySymbol = getCurrencySymbol(currency);
+    
+
 return (
     <>
     <ButtonDisplay>
@@ -104,12 +122,14 @@ return (
         <Button label="regular" onClick={e => {setSelectedSize(e.target.value)}} />
     </ButtonDisplay>
     <SliderDisplay>
+        <Tampons />
         <input type="range" min={6} max={10} value={plainTamponCount} step={2} className="slider" onChange={event => setTamponCounts(event.target.value)} />
     </SliderDisplay>
     <SelectedProductDisplay>
-        <h1>{plainTamponCount} plain tampons and {cbdTamponCount} CBD-infused tampons</h1>
-        <h2>This package costs {price}{currency}</h2>
+        <Text>{plainTamponCount} plain tampons & <br></br>{cbdTamponCount} CBD-infused tampons</Text>
+        <Text>This package costs {currencySymbol || ''}{price}{!currencySymbol && currency}</Text>
         <SelectedProductImage src={packageImageUrl} />
+        <Button label="order" />
     </SelectedProductDisplay>
     </>
 )
