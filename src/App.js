@@ -15,6 +15,9 @@ const AppContainer = styled.div`
   min-height: 100vh;
   background-color: ${colours.baseColour};
   color: ${colours.darkGreen};
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 `
 
 
