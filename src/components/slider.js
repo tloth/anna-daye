@@ -147,6 +147,7 @@ return (
             </RangeDisplay>
         </FilterSliderDisplay>
         <SelectedProductDisplay>
+            <Text>Size: {selectedSize}</Text>
             <Text>{plainTamponCount} plain tampons & <br></br>{cbdTamponCount} CBD-infused tampons</Text>
             <Text>This package costs {currencySymbol || ''}{price}{!currencySymbol && currency}</Text>
             <SelectedProductImage src={packageImageUrl} />

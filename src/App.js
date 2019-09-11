@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import { colours, fontFamily, fontSize } from './theme';
 
 import Header from './components/header';
-import Button from './components/button';
 import Slider from './components/slider';
 import Table from './components/table';
 
@@ -19,7 +18,6 @@ const AppContainer = styled.div`
   align-items: center;
   flex-direction: column;
 `
-
 
 
 
