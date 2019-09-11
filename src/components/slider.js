@@ -5,7 +5,7 @@ import { colours, fontFamily, fontSize, spacing, borders } from '../theme';
 import Button from './button';
 import {PlainTampon, CbdTampon} from './tampons';
 
-const SliderDisplay = styled.section`
+const RangeDisplay = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,9 +32,11 @@ const SliderDisplay = styled.section`
         }
     }
 `
-const ButtonDisplay = styled.section`
+const FilterButtonDisplay = styled.section`
 `
-const TamponsDisplay = styled.section`
+const FilterSliderDisplay = styled.section`
+`
+const TamponsDisplay = styled.div`
     display: flex;
     max-width: 80vw;
     margin: 1.5em auto;
@@ -122,31 +124,35 @@ const Slider = () => {
 
 return (
     <>
-    <ButtonDisplay>
+    <FilterButtonDisplay>
         <Button label="small" onClick={e => {setSelectedSize(e.target.value)}} />
         <Button label="regular" onClick={e => {setSelectedSize(e.target.value)}} />
-    </ButtonDisplay>
-    <TamponsDisplay>
-        {
-            Array.from({length: plainTamponCount}, (_, k) => (
-                <PlainTampon />
-            ))
-        }
-        {
-            Array.from({length: cbdTamponCount}, (_, k) => (
-                <CbdTampon />
-            ))
-        }
-    </TamponsDisplay>
-    <SliderDisplay>
-        <input type="range" min={6} max={10} value={plainTamponCount} step={2} className="slider" onChange={event => setTamponCounts(event.target.value)} />
-    </SliderDisplay>
+    </FilterButtonDisplay>
+    {selectedSize ? <>
+    <FilterSliderDisplay>
+        <TamponsDisplay>
+            {
+                Array.from({length: plainTamponCount}, (_, k) => (
+                    <PlainTampon />
+                ))
+            }
+            {
+                Array.from({length: cbdTamponCount}, (_, k) => (
+                    <CbdTampon />
+                ))
+            }
+        </TamponsDisplay>
+        <RangeDisplay>
+            <input type="range" min={6} max={10} value={plainTamponCount} step={2} className="slider" onChange={event => setTamponCounts(event.target.value)} />
+        </RangeDisplay>
+    </FilterSliderDisplay>
     <SelectedProductDisplay>
         <Text>{plainTamponCount} plain tampons & <br></br>{cbdTamponCount} CBD-infused tampons</Text>
         <Text>This package costs {currencySymbol || ''}{price}{!currencySymbol && currency}</Text>
         <SelectedProductImage src={packageImageUrl} />
         <Button label="order" />
     </SelectedProductDisplay>
+        </> : null}
     </>
 )
 
