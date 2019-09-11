@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import {borders, spacing, colours, fontFamily, fontSize} from '../theme';
 
+import {SizeButton} from './buttons';
+
 const PackageDisplay = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -9,6 +11,7 @@ const PackageDisplay = styled.div`
     border: ${borders.darkYellow};
     width: 80vw;
     padding: 0.5em;
+    margin: auto;
 `
 const Package = styled.div`
     display: flex;
@@ -47,6 +50,7 @@ const Data = ({tamponsData}) => {
                                 <PieceOfInfo>Size: {x.tampons[0].size}</PieceOfInfo>
                                 <PieceOfInfo>Contains {12-x.tampons[1].amount} plain tampons with and {x.tampons[1].amount} with {x.tampons[1].coating} coating.</PieceOfInfo>
                                 <PieceOfInfo>{x.price} {x.currency}</PieceOfInfo>
+                                <SizeButton label="order" />
                             </InfoDisplay>
                         </Package>
                 )

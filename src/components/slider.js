@@ -67,11 +67,9 @@ const getCurrencySymbol = (currency) => {
         return currency === 'GBP' ? '£' : null;
     }
 
-const Slider = () => {
+const Slider = ({tamponsData, setTamponsData}) => {
     const [plainTamponCount, setPlainTamponCount] = React.useState(6);
     const [cbdTamponCount, setCbdTamponCount] = React.useState(6);
-
-    const [tamponsData, setTamponsData] = React.useState(null);
 
     const [selectedSize, setSelectedSize] = React.useState(null);
 
@@ -125,7 +123,6 @@ const Slider = () => {
 
 return (
     <>
-    <Data tamponsData={tamponsData} />
     <FilterButtonDisplay>
         <SizeButton label="small" onClick={e => {setSelectedSize(e.target.value)}} />
         <SizeButton label="regular" onClick={e => {setSelectedSize(e.target.value)}} />
