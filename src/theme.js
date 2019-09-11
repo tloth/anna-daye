@@ -7,7 +7,7 @@ export const fontFamily = {
 
 export const fontSize = {
     big: '3em',
-    medium: '2em',
+    medium: '1.5em',
     small: '1.2em',
     tiny: '1em'
 };
@@ -23,6 +23,7 @@ export const colours = {
 export const borders = {
     darkGreen: `1px solid ${colours.darkGreen}`,
     darkYellow: `1px solid ${colours.darkYellow}`,
+    lightGreen: `1px solid ${colours.lightGreen}`,
     dashed: `1px dashed ${colours.darkGreen}`
 };
 

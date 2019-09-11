@@ -27,7 +27,7 @@ function App() {
       <Header />
       <Slider />
       <Table />
-      </AppContainer>
+    </AppContainer>
   );
 }
 
