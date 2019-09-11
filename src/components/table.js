@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { colours, fontSize, spacing, borders } from '../theme';
 
+import Button from './button';
+
 const TableOutline = styled.table`
     background-color: ${colours.baseColour};
     color: ${colours.darkGreen};
@@ -26,8 +28,12 @@ const TableCell = styled.td`
 `
 
 const Table = () => {
+    const [showTable, setShowTable] = React.useState(false);
+
     return (
-        <TableOutline>
+        <>
+        <Button label={"show all packages"} onClick={e => {setShowTable(true)}}/>
+        {showTable ? <TableOutline>
             <TableRow>
                 <TableHeading>Plain/CBD-infused</TableHeading>
                 <TableHeading>Small</TableHeading>
@@ -48,7 +54,8 @@ const Table = () => {
                 <TableCell>£17</TableCell>
                 <TableCell>£18</TableCell>
             </TableRow>
-        </TableOutline>
+        </TableOutline> : null}
+        </>
     )
 }
 

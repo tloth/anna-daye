@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import { colours, fontFamily, fontSize } from './theme';
 
 import Header from './components/header';
-import Button from './components/button';
 import Slider from './components/slider';
 import Table from './components/table';
 
@@ -22,27 +21,12 @@ const AppContainer = styled.div`
 
 
 
-
 function App() {
   return (
     <AppContainer>
       <Header />
       <Slider />
       <Table />
-
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Daye
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </AppContainer>
   );
 }
