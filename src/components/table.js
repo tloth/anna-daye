@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { colours, fontSize, spacing, borders } from '../theme';
 
 import {ShowAllButton} from './buttons';
+import Data from './data';
 
 const TableOutline = styled.table`
     background-color: ${colours.baseColour};
@@ -10,7 +11,7 @@ const TableOutline = styled.table`
     font-size: ${fontSize.small};
     border: ${borders.darkGreen};
     border-collapse: collapse;
-    margin: ${spacing.medium};
+    margin: ${spacing.medium} auto;
 `
 const TableRow = styled.tr`
 `
@@ -27,13 +28,16 @@ const TableCell = styled.td`
     width: 10vw;
 `
 
-const Table = () => {
+const Table = ({tamponsData, setTamponsData}) => {
     const [showTable, setShowTable] = React.useState(false);
 
     return (
         <>
         <ShowAllButton label={"show all packages"} onClick={e => {setShowTable(true)}}/>
-        {showTable ? <TableOutline>
+        {showTable ? 
+        <>
+        <Data tamponsData={tamponsData} setTamponsData={setTamponsData} />
+        <TableOutline>
             <TableRow>
                 <TableHeading>Plain/CBD-infused</TableHeading>
                 <TableHeading>Small</TableHeading>
@@ -54,7 +58,8 @@ const Table = () => {
                 <TableCell>£17</TableCell>
                 <TableCell>£18</TableCell>
             </TableRow>
-        </TableOutline> : null}
+        </TableOutline> 
+        </> : null}
         </>
     )
 }

@@ -4,6 +4,7 @@ import { colours, fontFamily, fontSize, spacing, borders } from '../theme';
 
 import {SizeButton} from './buttons';
 import {PlainTampon, CbdTampon} from './tampons';
+import Data from './data';
 
 const RangeDisplay = styled.div`
     display: flex;
@@ -66,11 +67,9 @@ const getCurrencySymbol = (currency) => {
         return currency === 'GBP' ? '£' : null;
     }
 
-const Slider = () => {
+const Slider = ({tamponsData, setTamponsData}) => {
     const [plainTamponCount, setPlainTamponCount] = React.useState(6);
     const [cbdTamponCount, setCbdTamponCount] = React.useState(6);
-
-    const [tamponsData, setTamponsData] = React.useState(null);
 
     const [selectedSize, setSelectedSize] = React.useState(null);
 

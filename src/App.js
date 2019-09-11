@@ -22,11 +22,14 @@ const AppContainer = styled.div`
 
 
 function App() {
+
+  const [tamponsData, setTamponsData] = React.useState(null);
+
   return (
     <AppContainer>
       <Header />
-      <Slider />
-      <Table />
+      <Slider tamponsData={tamponsData} setTamponsData={setTamponsData} />
+      <Table tamponsData={tamponsData} setTamponsData={setTamponsData} />
     </AppContainer>
   );
 }
