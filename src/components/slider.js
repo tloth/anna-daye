@@ -129,29 +129,29 @@ return (
         <Button label="regular" onClick={e => {setSelectedSize(e.target.value)}} />
     </FilterButtonDisplay>
     {selectedSize ? <>
-    <FilterSliderDisplay>
-        <TamponsDisplay>
-            {
-                Array.from({length: plainTamponCount}, (_, k) => (
-                    <PlainTampon />
-                ))
-            }
-            {
-                Array.from({length: cbdTamponCount}, (_, k) => (
-                    <CbdTampon />
-                ))
-            }
-        </TamponsDisplay>
-        <RangeDisplay>
-            <input type="range" min={6} max={10} value={plainTamponCount} step={2} className="slider" onChange={event => setTamponCounts(event.target.value)} />
-        </RangeDisplay>
-    </FilterSliderDisplay>
-    <SelectedProductDisplay>
-        <Text>{plainTamponCount} plain tampons & <br></br>{cbdTamponCount} CBD-infused tampons</Text>
-        <Text>This package costs {currencySymbol || ''}{price}{!currencySymbol && currency}</Text>
-        <SelectedProductImage src={packageImageUrl} />
-        <Button label="order" />
-    </SelectedProductDisplay>
+        <FilterSliderDisplay>
+            <TamponsDisplay>
+                {
+                    Array.from({length: plainTamponCount}, (_, k) => (
+                        <PlainTampon />
+                    ))
+                }
+                {
+                    Array.from({length: cbdTamponCount}, (_, k) => (
+                        <CbdTampon />
+                    ))
+                }
+            </TamponsDisplay>
+            <RangeDisplay>
+                <input type="range" min={6} max={10} value={plainTamponCount} step={2} className="slider" onChange={event => setTamponCounts(event.target.value)} />
+            </RangeDisplay>
+        </FilterSliderDisplay>
+        <SelectedProductDisplay>
+            <Text>{plainTamponCount} plain tampons & <br></br>{cbdTamponCount} CBD-infused tampons</Text>
+            <Text>This package costs {currencySymbol || ''}{price}{!currencySymbol && currency}</Text>
+            <SelectedProductImage src={packageImageUrl} />
+            <Button label="order" />
+        </SelectedProductDisplay>
         </> : null}
     </>
 )
