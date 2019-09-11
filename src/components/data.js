@@ -9,9 +9,12 @@ const PackageDisplay = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     border: ${borders.darkYellow};
-    max-width: 80vw;
+    width: 80vw;
     padding: 0.5em;
     margin: ${spacing.medium} auto;
+    @media (min-width: 818px) {
+        width: 654px;
+    }
 `
 const Package = styled.div`
     display: flex;
@@ -36,6 +39,10 @@ const Image = styled.img`
     @media (max-width: 481px) {
         margin: auto;
     }
+    @media (min-width: 818px) {
+        max-height: 409px;
+        max-width: 409px;
+    }
 `
 
 const Data = ({tamponsData}) => {
@@ -48,7 +55,7 @@ const Data = ({tamponsData}) => {
                             <Image src={x.productImage} />
                             <InfoDisplay>
                                 <PieceOfInfo>Size: {x.tampons[0].size}</PieceOfInfo>
-                                <PieceOfInfo>Contains {12-x.tampons[1].amount} plain tampons with and {x.tampons[1].amount} with {x.tampons[1].coating} coating.</PieceOfInfo>
+                                <PieceOfInfo>Contains {x.tampons[0].amount} plain tampons and {x.tampons[1].amount} with {x.tampons[1].coating} coating.</PieceOfInfo>
                                 <PieceOfInfo>{x.price} {x.currency}</PieceOfInfo>
                                 <SizeButton label="order" />
                             </InfoDisplay>
