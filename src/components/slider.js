@@ -1,11 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colours, fontFamily, fontSize, spacing, borders } from '../theme';
-import { ReactComponent as Tampons } from '../12tampons.svg';
 
 import Button from './button';
-import CbdTampon from './cbdTampon';
-import PlainTampon from './plainTampon';
+import {PlainTampon, CbdTampon} from './tampons';
 
 const SliderDisplay = styled.section`
     display: flex;
@@ -25,20 +23,21 @@ const SliderDisplay = styled.section`
             appearance: none;
             height: 2.1em;
             width: 2.1em;
-            background: url(https://daye.cdn.prismic.io/daye%2F9bc6bc2e-94ff-4b77-b9e6-c87f09aebbe3_sanitised.svg) no-repeat;
+            background: url(https://svgshare.com/i/Et_.svg) no-repeat;
         }
         &::-moz-range-thumb {
             height: 2.1em;
             width: 2.1em;
-            background: url(https://daye.cdn.prismic.io/daye%2F9bc6bc2e-94ff-4b77-b9e6-c87f09aebbe3_sanitised.svg) no-repeat;
+            background: url(https://svgshare.com/i/Et_.svg) no-repeat;
         }
     }
 `
 const ButtonDisplay = styled.section`
 `
 const TamponsDisplay = styled.section`
+    display: flex;
     max-width: 80vw;
-    margin: 0 auto;
+    margin: 1.5em auto;
 `
 const SelectedProductDisplay = styled.section`
     display: flex;
@@ -127,7 +126,7 @@ return (
         <Button label="small" onClick={e => {setSelectedSize(e.target.value)}} />
         <Button label="regular" onClick={e => {setSelectedSize(e.target.value)}} />
     </ButtonDisplay>
-
+    <TamponsDisplay>
         {
             Array.from({length: plainTamponCount}, (_, k) => (
                 <PlainTampon />
@@ -138,9 +137,8 @@ return (
                 <CbdTampon />
             ))
         }
+    </TamponsDisplay>
     <SliderDisplay>
-    
-        <Tampons />
         <input type="range" min={6} max={10} value={plainTamponCount} step={2} className="slider" onChange={event => setTamponCounts(event.target.value)} />
     </SliderDisplay>
     <SelectedProductDisplay>
