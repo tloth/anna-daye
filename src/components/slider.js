@@ -4,6 +4,7 @@ import { colours, fontFamily, fontSize, spacing, borders } from '../theme';
 
 import {SizeButton} from './buttons';
 import {PlainTampon, CbdTampon} from './tampons';
+import Data from './data';
 
 const RangeDisplay = styled.div`
     display: flex;
@@ -124,6 +125,7 @@ const Slider = () => {
 
 return (
     <>
+    <Data tamponsData={tamponsData} />
     <FilterButtonDisplay>
         <SizeButton label="small" onClick={e => {setSelectedSize(e.target.value)}} />
         <SizeButton label="regular" onClick={e => {setSelectedSize(e.target.value)}} />
