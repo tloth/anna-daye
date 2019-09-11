@@ -4,6 +4,8 @@ import { colours, fontFamily, fontSize, spacing, borders } from '../theme';
 import { ReactComponent as Tampons } from '../12tampons.svg';
 
 import Button from './button';
+import CbdTampon from './cbdTampon';
+import PlainTampon from './plainTampon';
 
 const SliderDisplay = styled.section`
     display: flex;
@@ -33,6 +35,10 @@ const SliderDisplay = styled.section`
     }
 `
 const ButtonDisplay = styled.section`
+`
+const TamponsDisplay = styled.section`
+    max-width: 80vw;
+    margin: 0 auto;
 `
 const SelectedProductDisplay = styled.section`
     display: flex;
@@ -121,7 +127,19 @@ return (
         <Button label="small" onClick={e => {setSelectedSize(e.target.value)}} />
         <Button label="regular" onClick={e => {setSelectedSize(e.target.value)}} />
     </ButtonDisplay>
+
+        {
+            Array.from({length: plainTamponCount}, (_, k) => (
+                <PlainTampon />
+            ))
+        }
+        {
+            Array.from({length: cbdTamponCount}, (_, k) => (
+                <CbdTampon />
+            ))
+        }
     <SliderDisplay>
+    
         <Tampons />
         <input type="range" min={6} max={10} value={plainTamponCount} step={2} className="slider" onChange={event => setTamponCounts(event.target.value)} />
     </SliderDisplay>
