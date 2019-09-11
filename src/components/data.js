@@ -9,9 +9,9 @@ const PackageDisplay = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     border: ${borders.darkYellow};
-    width: 80vw;
+    max-width: 80vw;
     padding: 0.5em;
-    margin: auto;
+    margin: ${spacing.medium} auto;
 `
 const Package = styled.div`
     display: flex;
