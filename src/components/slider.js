@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { colours, fontFamily, fontSize, spacing, borders } from '../theme';
 
-import Button from './button';
+import {SizeButton} from './buttons';
 import {PlainTampon, CbdTampon} from './tampons';
 
 const RangeDisplay = styled.div`
@@ -125,8 +125,8 @@ const Slider = () => {
 return (
     <>
     <FilterButtonDisplay>
-        <Button label="small" onClick={e => {setSelectedSize(e.target.value)}} />
-        <Button label="regular" onClick={e => {setSelectedSize(e.target.value)}} />
+        <SizeButton label="small" onClick={e => {setSelectedSize(e.target.value)}} />
+        <SizeButton label="regular" onClick={e => {setSelectedSize(e.target.value)}} />
     </FilterButtonDisplay>
     {selectedSize ? <>
         <FilterSliderDisplay>
@@ -151,7 +151,7 @@ return (
             <Text>{plainTamponCount} plain tampons & <br></br>{cbdTamponCount} CBD-infused tampons</Text>
             <Text>This package costs {currencySymbol || ''}{price}{!currencySymbol && currency}</Text>
             <SelectedProductImage src={packageImageUrl} />
-            <Button label="order" />
+            <SizeButton label="order" />
         </SelectedProductDisplay>
         </> : null}
     </>

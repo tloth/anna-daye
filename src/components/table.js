@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { colours, fontSize, spacing, borders } from '../theme';
 
-import Button from './button';
+import {ShowAllButton} from './buttons';
 
 const TableOutline = styled.table`
     background-color: ${colours.baseColour};
@@ -32,7 +32,7 @@ const Table = () => {
 
     return (
         <>
-        <Button label={"show all packages"} onClick={e => {setShowTable(true)}}/>
+        <ShowAllButton label={"show all packages"} onClick={e => {setShowTable(true)}}/>
         {showTable ? <TableOutline>
             <TableRow>
                 <TableHeading>Plain/CBD-infused</TableHeading>
