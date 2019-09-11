@@ -54,8 +54,8 @@ const Data = ({tamponsData}) => {
                         <Package>
                             <Image src={x.productImage} />
                             <InfoDisplay>
-                                <PieceOfInfo>Size: {x.tampons[0].size}</PieceOfInfo>
                                 <PieceOfInfo>Contains {x.tampons[0].amount} plain tampons and {x.tampons[1].amount} with {x.tampons[1].coating} coating.</PieceOfInfo>
+                                <PieceOfInfo>Size: {x.tampons[0].size}</PieceOfInfo>
                                 <PieceOfInfo>{x.price} {x.currency}</PieceOfInfo>
                                 <SizeButton label="order" />
                             </InfoDisplay>
