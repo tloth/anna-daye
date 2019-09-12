@@ -50,9 +50,9 @@ const Data = ({ tamponsData }) => {
     <>
       <PackageDisplay>
         {tamponsData
-          ? tamponsData.map(x => {
+          ? tamponsData.map((x, k) => {
               return (
-                <Package>
+                <Package key={k}>
                   <Image src={x.productImage} />
                   <InfoDisplay>
                     <PieceOfInfo>

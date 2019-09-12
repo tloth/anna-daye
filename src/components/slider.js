@@ -138,10 +138,10 @@ const Slider = ({
           <FilterSliderDisplay>
             <TamponsDisplay>
               {Array.from({ length: plainTamponCount }, (_, k) => (
-                <PlainTampon />
+                <PlainTampon key={k}/>
               ))}
               {Array.from({ length: cbdTamponCount }, (_, k) => (
-                <CbdTampon />
+                <CbdTampon key={k}/>
               ))}
             </TamponsDisplay>
             <RangeDisplay>
