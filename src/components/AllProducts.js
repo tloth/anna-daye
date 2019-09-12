@@ -1,8 +1,8 @@
 import React from "react";
 
-import { ShowAllButton } from "./buttons";
-import Data from "./data";
-import Table from "./table";
+import { ShowAllButton } from "./common/buttons";
+import Data from "./allProducts/Data";
+import Table from "./allProducts/Table";
 
 const AllProducts = ({ tamponsData }) => {
   const [showTable, setShowTable] = React.useState(false);

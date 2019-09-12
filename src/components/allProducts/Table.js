@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { colours, borders, fontSize, spacing } from "../theme";
+import { colours, borders, fontSize, spacing } from "../../theme";
 
 const TableOutline = styled.table`
   background-color: ${colours.baseColour};
