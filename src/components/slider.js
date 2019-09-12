@@ -58,6 +58,12 @@ const Text = styled.p`
   font-size: ${fontSize.medium};
   font-weight: 600;
 `;
+const SmallText = styled.p`
+  color: ${colours.darkGreen};
+  font-size: ${fontSize.tiny};
+  text-align: center;
+  margin: 0 auto 2em auto;
+`
 
 const getCurrencySymbol = currency => {
   return currency === "GBP" ? "£" : null;
@@ -125,17 +131,20 @@ const Slider = ({
           onClick={e => {
             setSelectedSize(e.target.value);
           }}
+          selectedSize={selectedSize}
         />
         <SizeButton
           label="regular"
           onClick={e => {
             setSelectedSize(e.target.value);
           }}
+          selectedSize={selectedSize}
         />
       </FilterButtonDisplay>
       {selectedSize ? (
         <>
           <FilterSliderDisplay>
+            <SmallText>Select package content: <br></br> plain | CBD-infused</SmallText>
             <TamponsDisplay>
               {Array.from({ length: plainTamponCount }, (_, k) => (
                 <PlainTampon key={k}/>
@@ -157,7 +166,6 @@ const Slider = ({
             </RangeDisplay>
           </FilterSliderDisplay>
           <SelectedProductDisplay>
-            <Text>Size: {selectedSize}</Text>
             <Text>
               {plainTamponCount} plain tampons & <br></br>
               {cbdTamponCount} CBD-infused tampons

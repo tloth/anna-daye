@@ -4,13 +4,13 @@ import styled from 'styled-components';
 import { colours, fontSize, fontFamily, spacing, borders } from '../theme';
 
 const StyledSizeButton = styled.button`
-    background-color: ${colours.baseColour};
+    background-color: ${props => props.label === props.selectedSize ? colours.darkGreen : colours.baseColour};
     border: ${borders.darkGreen};
     padding: ${spacing.tiny};
     margin: ${spacing.small};
     font-family: ${fontFamily.baseFont};
     font-size: ${fontSize.small};
-    color: ${colours.darkGreen};
+    color: ${props => props.label === props.selectedSize ? colours.baseColour : colours.darkGreen};
     text-transform: uppercase;
     cursor: pointer;
 
@@ -37,8 +37,8 @@ const StyledShowAllButton = styled.button`
 `
 
 
-const SizeButton = ({ label, onClick }) => {
-    return <StyledSizeButton onClick={onClick} label={label} value={label}>{label}</StyledSizeButton>
+const SizeButton = ({ label, onClick, selectedSize }) => {
+    return <StyledSizeButton onClick={onClick} label={label} value={label} selectedSize={selectedSize}>{label}</StyledSizeButton>
 }
 const ShowAllButton = ({ label, onClick }) => {
     return <StyledShowAllButton onClick={onClick} label={label} value={label}>{label}</StyledShowAllButton>
