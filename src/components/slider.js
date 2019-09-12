@@ -159,7 +159,6 @@ const Slider = ({
             </RangeDisplay>
           </FilterSliderDisplay>
           <SelectedProductDisplay>
-            <Text>Size: {selectedSize}</Text>
             <Text>
               {plainTamponCount} plain tampons & <br></br>
               {cbdTamponCount} CBD-infused tampons
