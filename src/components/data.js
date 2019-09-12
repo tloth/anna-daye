@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { borders, spacing, fontSize } from "../theme";
 
+import { borders, spacing, fontSize } from "../theme";
 import { SizeButton } from "./buttons";
 
 const PackageDisplay = styled.div`
