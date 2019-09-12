@@ -10,7 +10,6 @@ const HeaderContainer = styled.section`
   padding: ${spacing.tiny};
   font-size: ${fontSize.medium};
 `;
-// not sure what to call the titles to keep it semantic, they are not navigation nor headings
 const Title = styled.p`
   font-family: ${fontFamily.titleFont};
   color: ${colours.darkYellow};

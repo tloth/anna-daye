@@ -3,9 +3,9 @@ import "./App.css";
 import styled from "styled-components";
 
 import { colours } from "./theme";
-import Header from "./components/header";
-import Slider from "./components/slider";
-import AllProducts from "./components/allproducts";
+import Header from "./components/Header";
+import Slider from "./components/Slider";
+import AllProducts from "./components/AllProducts";
 
 const AppContainer = styled.div`
   position: relative;

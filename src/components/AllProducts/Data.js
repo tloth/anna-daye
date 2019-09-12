@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import { borders, spacing, fontSize } from "../theme";
-import { SizeButton } from "./buttons";
+import { borders, spacing, fontSize } from "../../theme";
+import { SizeButton } from "../common/buttons";
 
 const PackageDisplay = styled.ul`
   display: flex;
