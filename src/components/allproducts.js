@@ -1,25 +1,30 @@
-import React from 'react';
+import React from "react";
 
-import {ShowAllButton} from './buttons';
-import Data from './data';
-import Table from './table';
+import { ShowAllButton } from "./buttons";
+import Data from "./data";
+import Table from "./table";
 
-const AllProducts = ({tamponsData, setTamponsData}) => {
-    const [showTable, setShowTable] = React.useState(false);
+const AllProducts = ({ tamponsData }) => {
+  const [showTable, setShowTable] = React.useState(false);
 
-    return (
+  return (
+    <>
+      {!showTable ? (
+        <ShowAllButton
+          label={"show all packages"}
+          onClick={e => {
+            setShowTable(true);
+          }}
+        />
+      ) : null}
+      {showTable ? (
         <>
-        { !showTable ? 
-        <ShowAllButton label={"show all packages"} onClick={e => {setShowTable(true)}}/>
-        : null}
-        {showTable ? 
-            <>
-            <Data tamponsData={tamponsData} setTamponsData={setTamponsData} />
-            <Table />
-            </> 
-        : null}
+          <Data tamponsData={tamponsData} />
+          <Table />
         </>
-    )
-}
+      ) : null}
+    </>
+  );
+};
 
 export default AllProducts;

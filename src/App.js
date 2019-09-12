@@ -1,11 +1,11 @@
-import React from 'react';
-import './App.css';
-import styled from 'styled-components';
-import { colours } from './theme';
+import React from "react";
+import "./App.css";
+import styled from "styled-components";
+import { colours } from "./theme";
 
-import Header from './components/header';
-import Slider from './components/slider';
-import AllProducts from './components/allproducts';
+import Header from "./components/header";
+import Slider from "./components/slider";
+import AllProducts from "./components/allproducts";
 
 const AppContainer = styled.div`
   position: relative;
@@ -15,10 +15,9 @@ const AppContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-`
+`;
 
 function App() {
-
   const [tamponsData, setTamponsData] = React.useState(null);
 
   const [plainTamponCount, setPlainTamponCount] = React.useState(6);
@@ -33,7 +32,22 @@ function App() {
   return (
     <AppContainer>
       <Header />
-      <Slider tamponsData={tamponsData} setTamponsData={setTamponsData} plainTamponCount={plainTamponCount} setPlainTamponCount={setPlainTamponCount} cbdTamponCount={cbdTamponCount} setCbdTamponCount={setCbdTamponCount} selectedSize={selectedSize} setSelectedSize={setSelectedSize} packageImageUrl={packageImageUrl} setPackageImageUrl={setPackageImageUrl} price={price} setPrice={setPrice} currency={currency} setCurrency={setCurrency} />
+      <Slider
+        tamponsData={tamponsData}
+        setTamponsData={setTamponsData}
+        plainTamponCount={plainTamponCount}
+        setPlainTamponCount={setPlainTamponCount}
+        cbdTamponCount={cbdTamponCount}
+        setCbdTamponCount={setCbdTamponCount}
+        selectedSize={selectedSize}
+        setSelectedSize={setSelectedSize}
+        packageImageUrl={packageImageUrl}
+        setPackageImageUrl={setPackageImageUrl}
+        price={price}
+        setPrice={setPrice}
+        currency={currency}
+        setCurrency={setCurrency}
+      />
       <AllProducts tamponsData={tamponsData} setTamponsData={setTamponsData} />
     </AppContainer>
   );
