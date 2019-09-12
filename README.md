@@ -1,6 +1,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/01f88984-c4c3-41b4-b3bb-665cce0a5d3d/deploy-status)](https://app.netlify.com/sites/priceless-bell-cceae5/deploys)
 
-# Anna's Daye tech challenge
+# Anna's Daye tech challenge :sparkles:
 _It's tampon time_
 
 A mini app to display tampon data from Daye's API.
