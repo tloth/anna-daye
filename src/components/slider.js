@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { colours, fontSize, spacing } from "../theme";
 
+import { colours, fontSize, spacing } from "../theme";
 import { SizeButton } from "./buttons";
 import { PlainTampon, CbdTampon } from "./tampons";
 

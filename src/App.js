@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
 import styled from "styled-components";
-import { colours } from "./theme";
 
+import { colours } from "./theme";
 import Header from "./components/header";
 import Slider from "./components/slider";
 import AllProducts from "./components/allproducts";
@@ -19,12 +19,9 @@ const AppContainer = styled.div`
 
 function App() {
   const [tamponsData, setTamponsData] = React.useState(null);
-
   const [plainTamponCount, setPlainTamponCount] = React.useState(6);
   const [cbdTamponCount, setCbdTamponCount] = React.useState(6);
-
   const [selectedSize, setSelectedSize] = React.useState(null);
-
   const [packageImageUrl, setPackageImageUrl] = React.useState(null);
   const [price, setPrice] = React.useState(null);
   const [currency, setCurrency] = React.useState(null);
