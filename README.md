@@ -11,3 +11,7 @@ See it live here: https://priceless-bell-cceae5.netlify.com/
 You can see the planning process here: https://hackmd.io/_bKYJJd8R66KPR3JHX2yuA?view
 
 You can see the figma where I edited the SVGs (well, the one SVG) here: https://www.figma.com/file/I2MuDdY1jUR9k2O4YS403l/Daye-tech-test?node-id=0%3A1
+
+Little disclaimer:
+- re: slider - I understand that a slider for three options might not be the best choice, but I thought it could work as future-proofing, in case there are new packages added with different content
+- re: table - the table displaying all the prices is currently fed hardcoded data. I left it in as a visual representation of a stretch-goal.
