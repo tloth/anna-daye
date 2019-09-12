@@ -11,6 +11,7 @@ const TableOutline = styled.table`
   border-collapse: collapse;
   margin: ${spacing.medium} auto;
 `;
+const TableBody = styled.tbody``;
 const TableRow = styled.tr``;
 const TableHeading = styled.th`
   text-transform: uppercase;
@@ -28,26 +29,28 @@ const TableCell = styled.td`
 const Table = () => {
   return (
     <TableOutline>
-      <TableRow>
-        <TableHeading>Plain/CBD-infused</TableHeading>
-        <TableHeading>Small</TableHeading>
-        <TableHeading>Regular</TableHeading>
-      </TableRow>
-      <TableRow>
-        <TableHeading>6/6</TableHeading>
-        <TableCell>£18</TableCell>
-        <TableCell>£19</TableCell>
-      </TableRow>
-      <TableRow>
-        <TableHeading>8/4</TableHeading>
-        <TableCell>£17</TableCell>
-        <TableCell>£19</TableCell>
-      </TableRow>
-      <TableRow>
-        <TableHeading>10/2</TableHeading>
-        <TableCell>£17</TableCell>
-        <TableCell>£18</TableCell>
-      </TableRow>
+      <TableBody>
+        <TableRow>
+          <TableHeading>Plain/CBD-infused</TableHeading>
+          <TableHeading>Small</TableHeading>
+          <TableHeading>Regular</TableHeading>
+        </TableRow>
+        <TableRow>
+          <TableHeading>6/6</TableHeading>
+          <TableCell>£18</TableCell>
+          <TableCell>£19</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableHeading>8/4</TableHeading>
+          <TableCell>£17</TableCell>
+          <TableCell>£19</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableHeading>10/2</TableHeading>
+          <TableCell>£17</TableCell>
+          <TableCell>£18</TableCell>
+        </TableRow>
+      </TableBody>
     </TableOutline>
   );
 };
