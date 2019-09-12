@@ -125,12 +125,14 @@ const Slider = ({
           onClick={e => {
             setSelectedSize(e.target.value);
           }}
+          selectedSize={selectedSize}
         />
         <SizeButton
           label="regular"
           onClick={e => {
             setSelectedSize(e.target.value);
           }}
+          selectedSize={selectedSize}
         />
       </FilterButtonDisplay>
       {selectedSize ? (
