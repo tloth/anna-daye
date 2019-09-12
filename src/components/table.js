@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colours, fontSize, spacing, borders } from '../theme';
-
-import {ShowAllButton} from './buttons';
-import Data from './data';
+import { colours, borders, fontSize, spacing } from '../theme';
 
 const TableOutline = styled.table`
     background-color: ${colours.baseColour};
@@ -28,42 +25,30 @@ const TableCell = styled.td`
     width: 10vw;
 `
 
-const Table = ({tamponsData, setTamponsData}) => {
-    const [showTable, setShowTable] = React.useState(false);
-
+const Table = () => {
     return (
-        <>
-        { !showTable ? 
-        <ShowAllButton label={"show all packages"} onClick={e => {setShowTable(true)}}/>
-        : null}
-        {showTable ? 
-            <>
-            <Data tamponsData={tamponsData} setTamponsData={setTamponsData} />
-            <TableOutline>
-                <TableRow>
-                    <TableHeading>Plain/CBD-infused</TableHeading>
-                    <TableHeading>Small</TableHeading>
-                    <TableHeading>Regular</TableHeading>
-                </TableRow>
-                <TableRow>
-                    <TableHeading>6/6</TableHeading>
-                    <TableCell>£18</TableCell>
-                    <TableCell>£19</TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableHeading>8/4</TableHeading>
-                    <TableCell>£17</TableCell>
-                    <TableCell>£19</TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableHeading>10/2</TableHeading>
-                    <TableCell>£17</TableCell>
-                    <TableCell>£18</TableCell>
-                </TableRow>
-            </TableOutline> 
-            </> 
-        : null}
-        </>
+        <TableOutline>
+            <TableRow>
+                <TableHeading>Plain/CBD-infused</TableHeading>
+                <TableHeading>Small</TableHeading>
+                <TableHeading>Regular</TableHeading>
+            </TableRow>
+            <TableRow>
+                <TableHeading>6/6</TableHeading>
+                <TableCell>£18</TableCell>
+                <TableCell>£19</TableCell>
+            </TableRow>
+            <TableRow>
+                <TableHeading>8/4</TableHeading>
+                <TableCell>£17</TableCell>
+                <TableCell>£19</TableCell>
+            </TableRow>
+            <TableRow>
+                <TableHeading>10/2</TableHeading>
+                <TableCell>£17</TableCell>
+                <TableCell>£18</TableCell>
+            </TableRow>
+        </TableOutline> 
     )
 }
 

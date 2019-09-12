@@ -67,15 +67,7 @@ const getCurrencySymbol = (currency) => {
         return currency === 'GBP' ? '£' : null;
     }
 
-const Slider = ({tamponsData, setTamponsData}) => {
-    const [plainTamponCount, setPlainTamponCount] = React.useState(6);
-    const [cbdTamponCount, setCbdTamponCount] = React.useState(6);
-
-    const [selectedSize, setSelectedSize] = React.useState(null);
-
-    const [packageImageUrl, setPackageImageUrl] = React.useState(null);
-    const [price, setPrice] = React.useState(null);
-    const [currency, setCurrency] = React.useState(null);
+const Slider = ({tamponsData, setTamponsData, plainTamponCount, setPlainTamponCount, cbdTamponCount, setCbdTamponCount, selectedSize, setSelectedSize, packageImageUrl, setPackageImageUrl, price, setPrice, currency, setCurrency}) => {
 
     React.useEffect(() => {
         fetch('https://front-end-test-bvhzjr6b6a-uc.a.run.app/')
