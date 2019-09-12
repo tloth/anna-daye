@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colours, fontFamily, fontSize, spacing, borders } from '../theme';
+import { colours, fontSize, spacing } from '../theme';
 
 import {SizeButton} from './buttons';
 import {PlainTampon, CbdTampon} from './tampons';
-import Data from './data';
 
 const RangeDisplay = styled.div`
     display: flex;
@@ -69,42 +68,32 @@ const getCurrencySymbol = (currency) => {
 
 const Slider = ({tamponsData, setTamponsData, plainTamponCount, setPlainTamponCount, cbdTamponCount, setCbdTamponCount, selectedSize, setSelectedSize, packageImageUrl, setPackageImageUrl, price, setPrice, currency, setCurrency}) => {
 
-    React.useEffect(() => {
+    React.useEffect((setTamponsData) => {
         fetch('https://front-end-test-bvhzjr6b6a-uc.a.run.app/')
             .then(result => result.json())
             .then(json => setTamponsData(json))
             .catch(err => console.log(err));
     }, [])
-    console.log('tamponsData is ', tamponsData);
 
     const setTamponCounts = (value) => {
         setPlainTamponCount(parseInt(value, 10));
         setCbdTamponCount(12-value);
     }
 
-    React.useEffect(() => {
+    React.useEffect((tamponsData, setPackageImageUrl, setPrice, setCurrency) => {
         if (tamponsData && selectedSize && plainTamponCount && cbdTamponCount) {
         // get all packages that match selected size
         const rightSizes = tamponsData.filter(x => 
             (x.tampons[0].size === selectedSize) && (x.tampons[0].size === x.tampons[1].size)
         )
-        console.log('rightSizes after size filter is ', rightSizes);
-        console.log('counts are: ', plainTamponCount, cbdTamponCount);
     // get the one package that matches the size and content
         const selectedPackage = rightSizes.filter(x => {
-            console.log('counts inside count filter are: ', plainTamponCount, cbdTamponCount);
-            console.log('rightSizes inside count filter is ', rightSizes);
-            console.log(x.tampons[0].amount, plainTamponCount, x.tampons[1].amount, cbdTamponCount);
             return (x.tampons[0].amount === plainTamponCount) && (x.tampons[1].amount === cbdTamponCount)
         }
         )
-        console.log('here is the one: ', selectedPackage);
-
         setPackageImageUrl(selectedPackage[0].productImage);
         setPrice(selectedPackage[0].price);
         setCurrency(selectedPackage[0].currency);
-
-        console.log('selectedSize 2 is ', selectedSize)
         }
     }, [selectedSize, plainTamponCount, cbdTamponCount])
 

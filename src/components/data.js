@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {borders, spacing, colours, fontFamily, fontSize} from '../theme';
+import {borders, spacing, fontSize} from '../theme';
 
 import {SizeButton} from './buttons';
 

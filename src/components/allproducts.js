@@ -1,6 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
-import { colours, fontSize, spacing, borders } from '../theme';
 
 import {ShowAllButton} from './buttons';
 import Data from './data';
