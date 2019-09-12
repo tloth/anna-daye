@@ -4,7 +4,7 @@ import { borders, spacing, fontSize } from "../theme";
 
 import { SizeButton } from "./buttons";
 
-const PackageDisplay = styled.div`
+const PackageDisplay = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -16,7 +16,7 @@ const PackageDisplay = styled.div`
     width: 654px;
   }
 `;
-const Package = styled.div`
+const Package = styled.li`
   display: flex;
   border: ${borders.lightGreen};
   width: 100%;
