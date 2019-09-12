@@ -59,7 +59,6 @@ const Text = styled.p`
   font-weight: 600;
 `;
 
-// maybe call from a helpers folder
 const getCurrencySymbol = currency => {
   return currency === "GBP" ? "£" : null;
 };
